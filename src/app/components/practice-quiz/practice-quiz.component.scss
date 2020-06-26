@@ -1,0 +1,12 @@
+ion-card{
+    height: 240px; box-shadow: rgba(23,49,67,.15) 2px 0 4px; display: flex; align-items: center; border-radius: 5px; background-color: #fff;
+    img{
+        width: 100px;
+    }
+}
+.card-title{
+    font-size: 18px; color: #173143;  font-weight: 700;
+}
+.card-subtitle{
+    font-size: 14px; color: #9d9d9d;
+}

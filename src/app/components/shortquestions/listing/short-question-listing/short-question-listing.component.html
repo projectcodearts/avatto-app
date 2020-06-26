@@ -1,0 +1,32 @@
+<div class="papers-table-back">
+  <div class="inner-heading-style blue">
+    <div class="heading">
+      <div class="icon-back"><img src="assets/images/pre-year-i.png" alt=""></div>
+      Short Questions
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <td>Course Name</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    
+    <tbody>
+      
+      
+      
+      <tr *ngFor="let item of practiceQs">
+        <td>{{item.title}}</td>
+        <td>Free</td>
+        <td>
+          <button [routerLink]="['/', 'short-question-detail', item.link]" >Access</button>
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>
+</div>
+
