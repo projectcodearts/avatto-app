@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastController, AlertController } from '@ionic/angular';
 import { ApiService } from 'src/app/allServices/api.service';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +19,7 @@ export class LoginComponent implements OnInit {
 
 
   mainlogo: string = "assets/images/avatto-web-white.png";
-  constructor(private fb: FormBuilder,private router:Router, private api: ApiService, private toastCtrl: ToastController, private alertCtrl: AlertController) {
+  constructor(private fb: FormBuilder,private storage: Storage,private router:Router, private api: ApiService, private toastCtrl: ToastController, private alertCtrl: AlertController) {
     this.user.subscribe(user => {
       if (user) {
         console.log('already logged in');
@@ -42,6 +44,7 @@ export class LoginComponent implements OnInit {
     this.api.signIn(this.userForm.value.username, this.userForm.value.password).subscribe(
       res => {
         console.log(res);
+        this.storage.set('userInfo',JSON.stringify(res));
         this.router.navigate(['/home']);
       },
       err => {

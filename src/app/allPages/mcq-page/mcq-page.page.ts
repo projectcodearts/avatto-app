@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { NavController } from '@ionic/angular';
@@ -13,10 +13,10 @@ export class McqPagePage implements OnInit {
   fetching = false;
   users = [];
   page = 1;
-  
+    buttonValue = 0;
   maximumPages = 3;
   data:any;
-  constructor(public navCtrl: NavController,private httpClient: HttpClient,private route: ActivatedRoute) { 
+  constructor(public navCtrl: NavController,private httpClient: HttpClient,private route: ActivatedRoute,private el: ElementRef, private renderer: Renderer2) { 
     this.loadUsers();
   }
   loadUsers(infiniteScroll?) {
@@ -49,6 +49,31 @@ export class McqPagePage implements OnInit {
       console.log(this.maximumPages);
       this.fetching = false;
     })
+  }
+
+  selectAnswer(params, questionId,rightChoice,selector){
+    let qsAns = {};
+    qsAns['choice'] = params;
+    qsAns['id'] = questionId;
+    qsAns['rightChoice'] = rightChoice;
+    this.buttonValue = params;
+    let className = ".questionNum"+selector+params;
+    const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(className);
+    if(params == rightChoice){
+      this.renderer.setStyle(
+        btnElement,
+        'background-color',
+        '#59ad19'
+      );
+    } else {
+      this.renderer.setStyle(
+        btnElement,
+        'background-color',
+        'red'
+      );
+    }
+    
+
   }
 
 }

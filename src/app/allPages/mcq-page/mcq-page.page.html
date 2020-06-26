@@ -1,7 +1,3 @@
-<!-- <ion-content>
-  <app-mcq></app-mcq>
-</ion-content> -->
-
  <div class="fetching-block" *ngIf="fetching">
   <div class="lds-ring">
     <span></span>
@@ -16,30 +12,20 @@
   <div class="ion-item-back" *ngFor="let user of users, index as i">
     <div class="question-title">{{user.num}}. {{user.title}}</div>
     <ul class="option-back">
-      <li><span>A</span>{{user.option.A}} <i class="icon"></i></li>
-      <li><span>B</span>{{user.option.B}} <i class="icon"></i></li>
-      <li><span>C</span>{{user.option.C}} <i class="icon"></i></li>
-      <li><span>D</span>{{user.option.D}} <i class="icon"></i></li>
+      <li (click)="selectAnswer('A',user.id,user.choice,i)" class="questionNum{{i}}A">
+        <span>A</span>{{user.option.A}} <i class="icon"></i>
+      </li>
+      <li (click)="selectAnswer('B',user.id,user.choice,i)" class="questionNum{{i}}B">
+        <span>B</span>{{user.option.B}} <i class="icon"></i>
+      </li>
+      <li (click)="selectAnswer('C',user.id,user.choice,i)" class="questionNum{{i}}C">
+          <span>C</span>{{user.option.C}} <i class="icon"></i>
+      </li>
+      <li (click)="selectAnswer('D',user.id,user.choice,i)" class="questionNum{{i}}D">
+          <span>D</span>{{user.option.D}} <i class="icon"></i>
+      </li>
     </ul>
-    
-    
   </div>
-  <!-- <ion-card *ngFor="let user of users" class="ion-item-back">
-    <ion-item>
-      
-        <div class="question-title">{{user.num}}. {{user.title}}</div>
-        <ul class="option-back">
-          <li><span>A</span>{{user.option.A}} <i class="icon"></i></li>
-          <li><span>B</span>{{user.option.B}} <i class="icon"></i></li>
-          <li><span>C</span>{{user.option.C}} <i class="icon"></i></li>
-          <li><span>D</span>{{user.option.D}} <i class="icon"></i></li>
-        </ul>
-        
-      
-      
-    </ion-item>
-    
-  </ion-card> -->
   
   <ion-infinite-scroll (ionInfinite)="loadMore($event)" loadingSpinner="bubbles" loadingText="Loading Users...">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>

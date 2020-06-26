@@ -56,8 +56,11 @@ const routes: Routes = [
     path: 'mocktest',
     loadChildren: () => import('./allPages/mocktest-page/mocktest-page.module').then( m => m.MocktestPagePageModule)
   },{
-    path: 'quiz',
-    loadChildren: () => import('./allPages/quiz-page/quiz-page.module').then( m => m.QuizPagePageModule)
+    path: 'result',
+    loadChildren: () => import('./allPages/result/result.module').then( m => m.ResultPageModule)
+  },{
+    path: 'quiz/:id',
+    loadChildren: () => import('./allPages/quiz/quiz.module').then( m => m.QuizPageModule)
   },
   {
     path: 'practice-question',

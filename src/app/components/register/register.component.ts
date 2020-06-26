@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
 
 
   mainlogo: string = "assets/images/avatto-web-white.png";
-  constructor(private fb: FormBuilder,private route: ActivatedRoute,private router:Router, private api: ApiService, private toastCtrl: ToastController, private alertCtrl: AlertController){}
+  constructor(private fb: FormBuilder,private router:Router, private api: ApiService, private toastCtrl: ToastController, private alertCtrl: AlertController){}
 
   ngOnInit() {
     this.userForm = this.fb.group({
