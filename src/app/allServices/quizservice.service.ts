@@ -1,28 +1,13 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class QuizserviceService {
 
-  constructor() { }
-  getquizdata(){
-    return [
-      {
-        title: "There are many variations of passages of Lorem Ipsum available",
-      },
-      {
-        title: "Latin professor at Hampden-Sydney College in Virginia",
-      },
-      {
-        title: "If you are going to use a passage of Lorem Ipsum, you need",
-      },
-      {
-        title: "There are many variations of passages of Lorem Ipsum available",
-      },
-      {
-        title: "Lorem Ipsum is therefore always free from repetition, injected ",
-      }
-    ]
+  constructor(private http:HttpClient) { }
+  public getquizdata():Observable<object>{
+    return this.http.get("http://avatto.in/wp-json/avatto/v2/featuredquiz");
   }
 }
