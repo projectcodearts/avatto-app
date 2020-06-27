@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShortQuestionsService } from 'src/app/allServices/short-questions.service';
+import { ShortQuestionsService } from '../../../allServices/short-questions.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

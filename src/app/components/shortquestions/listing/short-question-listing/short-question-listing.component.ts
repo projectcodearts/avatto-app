@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
-import { PracticeQuestionDetailsServicesService } from 'src/app/allServices/practice-question-details-services.service';
+import { PracticeQuestionDetailsServicesService } from '../../../../allServices/practice-question-details-services.service';
 @Component({
   selector: 'app-short-question-listings',
   templateUrl: './short-question-listing.component.html',

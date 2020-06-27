@@ -9,6 +9,6 @@ export class QuizListingService {
 
   constructor(private http:HttpClient) { }
   public getQuizListing(id):Observable<object>{
-    return this.http.get("http://avatto.in/wp-json/avatto/v2/quiz-listing/"+id);
+    return this.http.get("https://avatto.in/wp-json/avatto/v2/quiz-listing/"+id);
  }
 }

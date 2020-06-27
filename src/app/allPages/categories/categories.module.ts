@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { CategoriesPageRoutingModule } from './categories-routing.module';
 
 import { CategoriesPage } from './categories.page';
-import { AllcategoriesComponent } from 'src/app/components/allcategories/allcategories.component';
-import { CategoryServicesService } from 'src/app/allServices/category-services.service';
+import { AllcategoriesComponent } from '../../components/allcategories/allcategories.component';
+import { CategoryServicesService } from '../../allServices/category-services.service';
 
 @NgModule({
   imports: [

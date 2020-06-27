@@ -16,7 +16,7 @@
     
     <tbody>
       
-      <tr class="head">
+      <tr class="head"> 
         <td>Online</td>
         <td></td>
         <td></td>
@@ -26,7 +26,7 @@
         <td>{{item.testname}}</td>
         <td>{{item.testprice}}</td>
         <td>
-          <button [routerLink]="['/item.buttonlink']" >{{item.buttontext}}</button>
+          <button [routerLink]="['/', 'practice-question', item.link]" >{{item.buttontext}}</button>
         </td>
       </tr>
     </tbody>

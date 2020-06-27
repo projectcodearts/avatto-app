@@ -8,6 +8,6 @@ export class PracticeQuizService {
 
   constructor(private http:HttpClient) { }
   getQuizdata(id,params){
-    return this.http.get('http://avatto.in/wp-json/avatto/v2/practice-quiz/'+id);
+    return this.http.get('https://avatto.in/wp-json/avatto/v2/practice-quiz/'+id);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudyMaterialService } from 'src/app/allServices/study-material.service';
+import { StudyMaterialService } from '../../../allServices/study-material.service';
 
 @Component({
   selector: 'app-study-material-table',
