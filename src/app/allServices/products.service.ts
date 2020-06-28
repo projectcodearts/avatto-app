@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -32,11 +32,11 @@ export class ProductsService {
         reqOpts.params = reqOpts.params.set(k, params[k]);
       }
     }
-    return this.http.get(this.productUrl + '/' + endpoint, reqOpts);
+    return this.http.get(this.url + '/' + endpoint, reqOpts);
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {
-    return this.http.post(this.productUrl + '/' + endpoint, body, reqOpts);
+    return this.http.post(this.url + '/' + endpoint, body, reqOpts);
   }
 
 
@@ -53,7 +53,7 @@ export class ProductsService {
   }
 
   appycoupon(params){
-    let seq = this.get('coupon/'+params, '');
+    let seq = this.get('wp-json/avatto/v2/coupon/'+params, '');
 
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
@@ -62,6 +62,48 @@ export class ProductsService {
     });
 
     return seq;
+  }
+
+  getPaymentGateways() {
+    return this.http.get(`${this.url}/wp-json/wc/v3/payment_gateways?consumer_key=${
+            this.consumerKey
+          }&consumer_secret=${this.consumerSecret}`);
+    
+  }
+
+  postOrder(obj){
+    const order = obj; //this.JSON_to_URLEncoded(obj);
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+    let seq = this.post(`wp-json/wc/v3/orders/?consumer_key=${
+      this.consumerKey
+    }&consumer_secret=${this.consumerSecret}`, order);
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+
+    
+    /*return new Promise(resolve => {
+      this.http
+        .post(
+          `${this.url}/wp-json/wc/v3/orders/?consumer_key=${
+            this.consumerKey
+          }&consumer_secret=${this.consumerSecret}`,
+          order,
+          { headers }
+        )
+        .subscribe(data => {
+          resolve(data);
+        });
+    });*/
   }
 }
 

@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/co
 import { Platform, LoadingController, ToastController } from '@ionic/angular';
 import { QuizService } from '../../../allServices/quiz.service'
 import { Router,ActivatedRoute } from '@angular/router';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-view-quiz',
   templateUrl: './view-quiz.component.html',
@@ -30,8 +31,17 @@ export class ViewQuizComponent implements OnInit {
     private el: ElementRef,
     private router: Router,
     private route: ActivatedRoute,
-    private renderer: Renderer2
-  ) { }
+    private renderer: Renderer2,
+    private storage: Storage
+  ) { 
+    this.storage.get('userInfo').then((val) => {
+      let userInfo = JSON.parse(val);
+      console.log(userInfo);
+      if(!userInfo){
+        this.router.navigate(['/sign-in',{"routeParams":"quiz","id":this.route.snapshot.paramMap.get('id')}]); 
+      }
+    });
+  }
 
   ngOnInit() {}
   async startQuiz(){

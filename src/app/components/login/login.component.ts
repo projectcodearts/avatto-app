@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ToastController, AlertController } from '@ionic/angular';
 import { ApiService } from 'src/app/allServices/api.service';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -15,11 +15,12 @@ import { Storage } from '@ionic/storage';
 export class LoginComponent implements OnInit {
   user = this.api.getCurrentUser();
   userForm: FormGroup;
-  
-
-
+  routeParams = 'home';
+  routeParamsID = '';
   mainlogo: string = "assets/images/avatto-web-white.png";
-  constructor(private fb: FormBuilder,private storage: Storage,private router:Router, private api: ApiService, private toastCtrl: ToastController, private alertCtrl: AlertController) {
+  constructor(private fb: FormBuilder,private storage: Storage,private router:Router, private activatedRoute: ActivatedRoute, private api: ApiService, private toastCtrl: ToastController, private alertCtrl: AlertController) {
+    this.routeParams = this.activatedRoute.snapshot.paramMap.get('routeParams');
+    this.routeParamsID = (this.activatedRoute.snapshot.paramMap.get('id'))?this.activatedRoute.snapshot.paramMap.get('id'):'';
     this.user.subscribe(user => {
       if (user) {
         console.log('already logged in');
@@ -45,7 +46,12 @@ export class LoginComponent implements OnInit {
       res => {
         console.log(res);
         this.storage.set('userInfo',JSON.stringify(res));
-        this.router.navigate(['/home']);
+        if(this.routeParamsID != ''){
+          this.router.navigate([this.routeParams, this.routeParamsID]);
+        } else {
+          this.router.navigate([this.routeParams]);
+        }
+        
       },
       err => {
         this.showError(err);
