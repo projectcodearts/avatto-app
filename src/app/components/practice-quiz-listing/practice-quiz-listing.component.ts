@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
-import { QuizListingService } from 'src/app/allServices/quiz-listing.service';
+import { QuizListingService } from '../../allServices/quiz-listing.service';
 @Component({
   selector: 'app-practice-quiz-listing',
   templateUrl: './practice-quiz-listing.component.html',

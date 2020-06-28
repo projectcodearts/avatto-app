@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from 'src/app/allServices/common.service';
+import { CommonService } from '../../allServices/common.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ToastController, AlertController } from '@ionic/angular';
-import { ApiService } from 'src/app/allServices/api.service';
+import { ApiService } from '../../allServices/api.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage';
 

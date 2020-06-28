@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/allServices/products.service';
+import { ProductsService } from '../../../allServices/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { LoadingController,ToastController } from '@ionic/angular';
 import { finalize } from 'rxjs/operators';

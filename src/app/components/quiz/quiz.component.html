@@ -13,7 +13,7 @@
     <p>Fetching</p>
   </div>
   <div class="quiz_back">
-      <ion-item *ngFor="let data of quiz" [routerLink]="['/quiz']">
+      <ion-item *ngFor="let data of fquiz" [routerLink]="['/', 'quiz', data.link]">
         <div class="ion-back">
           <ion-icon slot="start" name="help-circle-outline"></ion-icon>
         </div>

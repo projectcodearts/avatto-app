@@ -10,7 +10,7 @@ import { SyllabusDetailsPage } from './syllabus-details.page';
 import { SyllabusDetailsComponent } from 'src/app/components/syllabus-details/syllabus-details.component';
 
 @NgModule({
-  imports: [
+  imports: [ 
     CommonModule,
     FormsModule,
     IonicModule,

@@ -12,7 +12,7 @@ export class PapersService {
   }
 
   getmpaperstabledata(id,params){
-    return this.http.get('http://avatto.in/wp-json/avatto/v2/previous-papers/'+id);
+    return this.http.get('https://avatto.in/wp-json/avatto/v2/previous-papers/'+id);
     // return [
     //   {
     //     testmode:"online",

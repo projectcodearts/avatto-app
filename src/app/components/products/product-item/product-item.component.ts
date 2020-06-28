@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController,ToastController } from '@ionic/angular';
 import { finalize } from 'rxjs/operators';
-import { ProductsService } from 'src/app/allServices/products.service';
+import { ProductsService } from '../../../allServices/products.service';
 import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-product-item',

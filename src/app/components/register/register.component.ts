@@ -3,7 +3,7 @@ import { CommonService } from 'src/app/allServices/common.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ToastController, AlertController } from '@ionic/angular';
-import { ApiService } from 'src/app/allServices/api.service';
+import { ApiService } from '../../allServices/api.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',

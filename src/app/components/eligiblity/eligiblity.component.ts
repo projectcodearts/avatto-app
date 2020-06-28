@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EligiblityService } from 'src/app/allServices/eligiblity.service';
+import { EligiblityService } from '../../allServices/eligiblity.service';
 
 @Component({
   selector: 'app-eligiblity',

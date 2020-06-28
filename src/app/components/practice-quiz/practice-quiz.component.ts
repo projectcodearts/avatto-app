@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PracticeQuizService } from 'src/app/allServices/practice-quiz.service';
+import { PracticeQuizService } from '../../allServices/practice-quiz.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

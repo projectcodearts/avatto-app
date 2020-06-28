@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SyllabusService } from 'src/app/allServices/syllabus.service';
+import { SyllabusService } from '../../allServices/syllabus.service';
 import { LoadingController } from '@ionic/angular';
 import { finalize } from 'rxjs/operators';
 @Component({

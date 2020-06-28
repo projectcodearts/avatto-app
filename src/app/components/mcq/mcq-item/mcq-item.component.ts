@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { McqService } from 'src/app/allServices/mcq.service';
+import { McqService } from '../../../allServices/mcq.service';
 import { HttpClient } from '@angular/common/http';
 
 import { NavController } from '@ionic/angular';

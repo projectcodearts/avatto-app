@@ -5,12 +5,12 @@
         
         <div class="drescription-back">
           <ion-card-header class="card-header">
-            <ion-card-title class="card-title">Syllabus Details</ion-card-title>
+            <ion-card-title class="card-title">{{sylllabus.title}}</ion-card-title>
           </ion-card-header>
-          
+          <!-- <iframe width="100%" height="1122" [src]="iframe_src"></iframe> -->
+          <p [innerHtml]="sylllabus.iframe_src"></p>
           <p [innerHTML]="sylllabus.content"></p>
          
-          <iframe width="100%" height="1122" src="https://avatto.in/wp-content/plugins/pdf-poster/pdfjs/web/viewer.php?file=https://avatto.in/wp-content/uploads/2020/06/syllabus.pdf&amp;download=true&amp;print=true&amp;openfile=false"></iframe>
          
         </div>
       </ion-card>

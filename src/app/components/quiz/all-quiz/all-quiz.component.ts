@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QuizserviceService } from 'src/app/allServices/quizservice.service';
+import { QuizserviceService } from '../../../allServices/quizservice.service';
 
 @Component({
   selector: 'app-all-quiz',

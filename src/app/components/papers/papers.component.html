@@ -14,7 +14,7 @@
   </div>
   <ion-slides pager="true" [options]="slideOpts" class="papers-details">
     <ion-slide *ngFor="let data of papers">
-      <ion-card [routerLink]="['/data.link']">
+      <ion-card [routerLink]="['/', 'practice-question', data.link]">
         <div class="image-box">
           <img src="{{data.icon}}">
         </div>

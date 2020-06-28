@@ -10,7 +10,7 @@ export class PracticeQuestionService {
 
   getPQSdata(id,params){
     params = new HttpParams().set('id', id);
-    return this.http.get('http://avatto.in/wp-json/avatto/v2/practice-question/'+id);
+    return this.http.get('https://avatto.in/wp-json/avatto/v2/practice-question/'+id);
     
   }
 }

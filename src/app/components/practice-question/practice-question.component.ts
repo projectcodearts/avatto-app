@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PracticeQuestionService } from 'src/app/allServices/practice-question.service';
+import { PracticeQuestionService } from '../../allServices/practice-question.service';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-practice-question',
