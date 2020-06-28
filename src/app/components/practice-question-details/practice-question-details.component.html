@@ -21,7 +21,15 @@
         <td></td>
         <td></td>
       </tr>
-      
+      <div class="fetching-block" *ngIf="fetching" >
+        <div class="lds-ring">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p>Fetching</p>
+      </div>
       <tr *ngFor="let item of practiceQs">
         <td>{{item.title}}</td>
         <td>Free</td>

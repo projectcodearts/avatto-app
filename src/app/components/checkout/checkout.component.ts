@@ -10,6 +10,9 @@ declare var RazorpayCheckout:any;
   styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent implements OnInit {
+
+  
+  
   todo: { 
     couponCode: string, 
    } = {
@@ -17,6 +20,7 @@ export class CheckoutComponent implements OnInit {
   };
   cartProduct : any = JSON.parse(localStorage.getItem("product"))?JSON.parse(localStorage.getItem("product")):[];
 
+  
 
   orderData = {
     payment_method: "razorpay",
@@ -99,6 +103,7 @@ isChecked = "0";
       key: "rzp_test_1DP5mmOlF5G5ag", // your Key Id from Razorpay dashboard
       amount: 100, // Payment amount in smallest denomiation e.g. cents for USD
       name: 'Razorpay',
+     
       prefill: {
         email: 'test@razorpay.com',
         contact: '9990009991',
@@ -114,31 +119,23 @@ isChecked = "0";
       }
     };
 
-    var successCallback = function (payment_id) {
+    var successCallback = (payment_id) =>{
       console.log("razor success",payment_id);
-      let shillpingAddress = this.orderData.billing;
-      this.orderData['shipping'] = shillpingAddress;
-      let products = {
-        "product_id" : this.cartProduct.id,
-        "quantity" : "1"
-      }
-      this.orderData['line_items'] = products;
-      console.log(this.orderData);
-      this._products.postOrder(this.orderData).subscribe(async (resp) => {
-      console.log(resp);
-      }, async (err) => {
-      
-      });   
+      this.storage.set("payment_id",payment_id);
+      this.createOrder(); 
     };
 
     var cancelCallback = function (error) {
       alert(error.description + ' (Error ' + error.code + ')');
     };
 
-    RazorpayCheckout.open(options, successCallback, cancelCallback);
+    RazorpayCheckout.open(options);
+    RazorpayCheckout.on('payment.success', successCallback);
+    RazorpayCheckout.on('payment.cancel', cancelCallback);
   }
 
   createOrder(){
+    console.log('hey i am working');
     let shillpingAddress = this.orderData.billing;
     this.orderData['shipping'] = shillpingAddress;
     let products = {
