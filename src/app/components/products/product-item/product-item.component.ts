@@ -31,28 +31,14 @@ export class ProductItemComponent implements OnInit {
     this.getCartData();
   }
 
-  addToCart(product){
-    this.storage.get(`product_${product.id}`).then(async data => {
-      console.log(data);
-      if (data) {
-        const toast = await this.toast.create({
-          message: 'Item already in Cart',
-          duration: 2000
-        });
-        toast.present();
-      } else {
-        const toast = await this.toast.create({
-          message: 'Added to Cart',
-          duration: 2000
-        });
-        toast.present();
-        this.storage
-          .set(`product_${product.id}`, JSON.stringify(product))
-          .then(() => {
-            console.log('teko hudo');
-          });
-      }
+  async addToCart(product){
+    this.storage.set('product',JSON.stringify(product));
+    localStorage.setItem("product",JSON.stringify(product));
+    const toast = await this.toast.create({
+      message: 'Added to Cart',
+      duration: 2000
     });
+    toast.present();
   }
 
   getCartData() {
@@ -68,12 +54,13 @@ export class ProductItemComponent implements OnInit {
         obj['quantity'] = 1;
         this.baseProducts.push(obj);
         i++;
-        //console.log(obj);
+        
       })
       .then(() => {
         console.log(i);
         this.storage.set("quantity",i);
       });
+      console.log(this.baseProducts);
   }
 
 }
