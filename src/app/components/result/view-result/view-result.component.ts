@@ -54,8 +54,10 @@ export class ViewResultComponent implements OnInit {
   }
 
   async checkExplain(explain){
+
+    
     const modal = await this.modalController.create({
-      component: explain,
+      component: "explain",
       cssClass: 'my-custom-class'
     });
     return await modal.present();
