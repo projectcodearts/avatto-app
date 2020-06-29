@@ -38,6 +38,7 @@ export class CheckoutComponent implements OnInit {
       email: "",
       phone: ""
     },
+    line_items: [],
     shipping_lines: [
       {
         method_id: "flat_rate",
@@ -134,20 +135,35 @@ isChecked = "0";
     RazorpayCheckout.on('payment.cancel', cancelCallback);
   }
 
-  createOrder(){
-    console.log('hey i am working');
+  async createOrder(){
+    let loading = await this.loadingCtrl.create({
+			cssClass: 'my-custom-class',
+			message: 'Please wait...',
+		});
+    loading.present();
     let shillpingAddress = this.orderData.billing;
     this.orderData['shipping'] = shillpingAddress;
+
     let products = {
       "product_id" : this.cartProduct.id,
       "quantity" : "1"
     }
-    this.orderData['line_items'] = products;
-    console.log(this.orderData);
+    this.orderData.line_items.push(products);
+    
     this._products.postOrder(this.orderData).subscribe(async (resp) => {
-     console.log(resp);
+      loading.dismiss();
+      const toast = await this.toastCtrl.create({
+        message: 'Order has been successfully placed.',
+        duration: 2000
+      });
+      toast.present();
+      this.router.navigate(['/home']);
     }, async (err) => {
-     
+        const toast = await this.toastCtrl.create({
+          message: 'failed to place order.',
+          duration: 2000
+        });
+        toast.present();
     });   
   }
 

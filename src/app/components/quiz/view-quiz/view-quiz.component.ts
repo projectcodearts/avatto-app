@@ -219,7 +219,7 @@ export class ViewQuizComponent implements OnInit {
     }, async (err) => {
         loading.dismiss();		
         const toast = await this.toastCtrl.create({
-            message: 'failed to upload.',
+            message: 'failed to submmit quiz.',
             duration: 2000
         });
         toast.present();
