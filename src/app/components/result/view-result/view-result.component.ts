@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { NavController  } from '@ionic/angular';
 @Component({
   selector: 'app-view-result',
   templateUrl: './view-result.component.html',
@@ -11,7 +12,7 @@ export class ViewResultComponent implements OnInit {
 
   resultSheet : any = [];
   shortResult : any = [];
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController,public nav: NavController) { }
 
   ngOnInit() {
     let correctChoiceCount : number = 0,incorrectChoiceCount : number = 0,unattended : number = 0 ,timeTaken,score;
@@ -54,13 +55,13 @@ export class ViewResultComponent implements OnInit {
   }
 
   async checkExplain(explain){
-
-    
+    this.nav.navigateForward(['/explain',{"explain":explain}]);
+    /*
     const modal = await this.modalController.create({
       component: "explain",
       cssClass: 'my-custom-class'
     });
-    return await modal.present();
+    return await modal.present();*/
   }
 
 }

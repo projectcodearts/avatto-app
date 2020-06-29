@@ -10,17 +10,12 @@ declare var RazorpayCheckout:any;
   styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent implements OnInit {
-
-  
-  
   todo: { 
     couponCode: string, 
    } = {
     couponCode: ''
   };
   cartProduct : any = JSON.parse(localStorage.getItem("product"))?JSON.parse(localStorage.getItem("product")):[];
-
-  
 
   orderData = {
     payment_method: "razorpay",
@@ -46,8 +41,8 @@ export class CheckoutComponent implements OnInit {
         total: "10",
       }
     ]
-};
-isChecked = "0";
+  };
+  isChecked = "0";
 
   constructor( public platform: Platform,
     public loadingCtrl: LoadingController,
@@ -120,7 +115,7 @@ isChecked = "0";
       }
     };
 
-    var successCallback = (payment_id) =>{
+    var successCallback = (payment_id) => {
       console.log("razor success",payment_id);
       this.storage.set("payment_id",payment_id);
       this.createOrder(); 
@@ -150,6 +145,7 @@ isChecked = "0";
     }
     this.orderData.line_items.push(products);
     
+    
     this._products.postOrder(this.orderData).subscribe(async (resp) => {
       loading.dismiss();
       const toast = await this.toastCtrl.create({
@@ -173,7 +169,6 @@ isChecked = "0";
     } else {
       this.isChecked = "0";
     }
-      
   }
 
 }

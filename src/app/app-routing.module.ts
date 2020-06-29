@@ -49,6 +49,10 @@ const routes: Routes = [
     loadChildren: () => import('./allPages/syllabus-page/syllabus-page.module').then( m => m.SyllabusPagePageModule)
   },
   {
+    path: 'explain',
+    loadChildren: () => import('./allPages/quiz-explain/quiz-explain.module').then( m => m.QuizExplainPageModule)
+  },
+  {
     path: 'papers',
     loadChildren: () => import('./allPages/papers-page/papers-page.module').then( m => m.PapersPagePageModule)
   },
@@ -103,6 +107,11 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./allPages/pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
   },
+  {
+    path: 'quiz-explain',
+    loadChildren: () => import('./allPages/quiz-explain/quiz-explain.module').then( m => m.QuizExplainPageModule)
+  },
+
   
   
   
