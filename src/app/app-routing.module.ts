@@ -29,6 +29,14 @@ const routes: Routes = [
     loadChildren: () => import('./allPages/product-page/product-page.module').then( m => m.ProductPagePageModule)
   },
   {
+    path: 'orders',
+    loadChildren: () => import('./allPages/orders/orders.module').then( m => m.OrdersPageModule)
+  },
+  {
+    path: 'address',
+    loadChildren: () => import('./allPages/user-address/user-address.module').then( m => m.UserAddressPageModule)
+  },
+  {
     path: 'products/:id',
     loadChildren: () => import('./allPages/product-page/product-page-details/product-page-details.module').then( m => m.ProductPageDetailsPageModule)
   },
@@ -111,6 +119,16 @@ const routes: Routes = [
     path: 'quiz-explain',
     loadChildren: () => import('./allPages/quiz-explain/quiz-explain.module').then( m => m.QuizExplainPageModule)
   },
+  {
+    path: 'orders',
+    loadChildren: () => import('./allPages/orders/orders.module').then( m => m.OrdersPageModule)
+  },
+  {
+    path: 'user-address',
+    loadChildren: () => import('./allPages/user-address/user-address.module').then( m => m.UserAddressPageModule)
+  },
+
+
 
   
   
