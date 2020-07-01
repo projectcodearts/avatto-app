@@ -91,6 +91,26 @@ export class ProductsService {
     return seq;
   }
 
+  updateUserAddress(obj,customer_id){
+    const address = obj; //this.JSON_to_URLEncoded(obj);
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+    let seq = this.post(`wp-json/wc/v3/customers/${customer_id}/?consumer_key=${
+      this.consumerKey
+    }&consumer_secret=${this.consumerSecret}`, address);
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
   getCustomer(customerId){
     let customerlist = [];
     let seq = this.get(`wp-json/wc/v3/customers/${customerId}&consumer_key=${
@@ -120,10 +140,6 @@ export class ProductsService {
         console.error('ERROR', err);
       });
     });
-    
-    /*return this.http.get(`${this.url}/wp-json/wc/v3/orders?customer=${customerId}&consumer_key=${
-      this.consumerKey
-    }&consumer_secret=${this.consumerSecret}`); */
   }
 
 
