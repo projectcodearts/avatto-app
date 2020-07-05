@@ -12,13 +12,11 @@ export class EligiblityComponent implements OnInit {
   eligiblity: any;
   constructor(private _eligiblity: EligiblityService) { }
   slideOpts = {
-    initialSlide: 1,
-    freeMode: true,
     speed: 400,
-    slidesPerView: 1,
+    slidesPerView: 2,
     watchSlidesProgress: true,
     grabCursor: true,
-    spaceBetween: 20,
+    spaceBetween: 11,
   };
   ngOnInit() {
     this.fetching = true;

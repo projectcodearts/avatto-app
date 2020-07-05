@@ -7,10 +7,8 @@ router.url === '/forgot-password'; then blankheader; else mainheader">
 
 <ng-template #blankheader></ng-template>
 <ng-template #mainheader>
-
   <ion-header class="site-header">
     <ion-toolbar color="custom">
-      <ion-title start>Avatto</ion-title>
       <ion-buttons slot="start">
         <ion-menu-toggle>
           <ion-button>
@@ -18,19 +16,18 @@ router.url === '/forgot-password'; then blankheader; else mainheader">
           </ion-button>
         </ion-menu-toggle>
       </ion-buttons>
-      
+      <ion-title start>Avatto</ion-title>
+      <ion-buttons slot="end" [routerLink]="['/cart']">
+        <ion-button>
+          <div class="icon-details">
+            <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+            <span class="no">{{qtn}}</span>
+          </div>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
-
-
-  <!-- <ion-header class="site-header">
-    <ion-toolbar color="custom">
-      
-      <ion-title>Avatto</ion-title>
-      <ion-menu-button menu="main-menu" slot="end"></ion-menu-button>
-    </ion-toolbar>
-  </ion-header> -->
-  <ion-menu content-id="main" menuId="main-menu" side="end" type="overlay">
+  <ion-menu content-id="main" menuId="main-menu" side="start" type="overlay">
     <app-menu></app-menu>
   </ion-menu>
   

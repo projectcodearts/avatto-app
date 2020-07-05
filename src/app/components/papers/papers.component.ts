@@ -12,13 +12,11 @@ export class PapersComponent implements OnInit {
   papers: any;
   constructor(private _papers: PapersService) { }
   slideOpts = {
-    initialSlide: 1,
-    freeMode: true,
     speed: 400,
-    slidesPerView: 2,
+    slidesPerView: 3,
     watchSlidesProgress: true,
     grabCursor: true,
-    spaceBetween: 20
+    spaceBetween: 11
   };
   ngOnInit() {
     this.fetching = true;

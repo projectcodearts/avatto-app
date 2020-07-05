@@ -60,16 +60,14 @@ export class McqPagePage implements OnInit {
     let className = ".questionNum"+selector+params;
     const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(className);
     if(params == rightChoice){
-      this.renderer.setStyle(
+      this.renderer.addClass(
         btnElement,
-        'background-color',
-        '#59ad19'
+        'right',
       );
     } else {
-      this.renderer.setStyle(
+      this.renderer.addClass(
         btnElement,
-        'background-color',
-        'red'
+        'wrong',
       );
     }
     

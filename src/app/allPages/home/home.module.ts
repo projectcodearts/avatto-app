@@ -19,6 +19,7 @@ import { PapersService } from 'src/app/allServices/papers.service';
 import { MocktestService } from 'src/app/allServices/mocktest.service';
 import { EligiblityService } from 'src/app/allServices/eligiblity.service';
 import { FeaturedCategoryComponent } from 'src/app/components/featured-category/featured-category.component';
+import { CouponComponent } from 'src/app/components/coupon/coupon.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { FeaturedCategoryComponent } from 'src/app/components/featured-category/
     HomePage, 
     SearchbarComponent, 
     FeaturedCategoryComponent,
+    CouponComponent,
     SyllabusComponent,
     EligiblityComponent,
     PapersComponent,

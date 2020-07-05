@@ -1,16 +1,19 @@
 .avatoo-section{
-    width: 100%; float: left;  margin-top: 20px;
-    .heading{ margin-bottom: 0; width: 100%; float: left; padding: 0 20px 10px;}
+    width: 100%; float: left;  margin-top: 20px; padding: 0 0 0 11px;
+    .heading{ margin-bottom: 0; width: 100%; float: left; padding: 0 11px 11px 0;}
     h2{
-        font-weight: 600; font-size: 27px; color: #212121; text-transform: capitalize; margin: 0; padding: 0; float: left;
+        font-weight: 600; font-size: 22px; color: #212121; text-transform: capitalize; margin: 0; padding: 0; float: left;
     }
     a{
-        font-size: 17px; color: #001f46; font-weight: 600; text-decoration: none; text-transform: capitalize; float: right; margin-top: 6px;
+        font-size: 14px; color: #001f46; font-weight: 600; text-decoration: none; text-transform: capitalize; float: right; margin-top: 6px;
     }
     .eligiblity-details{
-        text-align: center; width: 100%; float: left;        
+        text-align: center; width: 100%; float: left; 
+        ion-slide{
+            width: 65% !important; align-items: start; 
+        }       
         ion-card{
-            height: 302px; width: 100%; box-shadow: rgba(23,49,67,.15) 8px 0 14px; border-radius: 5px; position: relative; background-color: #001f46; transition: all .5s ease-in-out;
+            height: 302px; box-shadow: rgba(23,49,67,.15) 8px 0 14px; border-radius: 5px; position: relative;  transition: all .5s ease-in-out; margin: 0; padding: 0;
             .image-box{
                 width: 100%; height: 197px; position: relative;
                 img{position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 100%; height: 100%; object-fit: cover;}
@@ -18,26 +21,26 @@
         }
         .swiper-slide-active{
             ion-card{
-                background-color: #f7bb00;
+                background-color: #001f46;
             }
             
         }
         .card-header{
             padding: 25px 0; 
             .card-title{
-                font-size: 18px; color: #fff; width: 100%; text-transform: capitalize; transition: all .5s ease-in-out;
+                font-size: 18px; color: #212121; width: 100%; text-transform: capitalize; transition: all .5s ease-in-out; font-weight: 700;
             }
             .card-sub-title{
-                color: #fff; transition: all .5s ease-in-out;
+                color: #212121; transition: all .5s ease-in-out; font-weight: 400;
             }
         }
         .swiper-slide-active{
             .card-header{
                 .card-title{
-                    color: #001f46;
+                    color: #fff;
                 }
                 .card-sub-title{
-                    color: #001f46;
+                    color: #fff;
                 }
             }
         }
@@ -50,7 +53,7 @@ ion-slides {
     
  }
 ion-slide{
-   display: block !important; height: calc(337px + 33px);
+   display: block !important; height: calc(310px);
 }
  
    

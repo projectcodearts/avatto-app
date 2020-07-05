@@ -4,10 +4,10 @@
     width: 100%; float: left;  margin-top: 20px;
     .heading{ margin-bottom: 0; width: 100%; float: left; padding: 0 20px 10px;}
     h2{
-        font-weight: 600; font-size: 27px; color: #212121; text-transform: capitalize; margin: 0; padding: 0; float: left;
+        font-weight: 600; font-size: 22px; color: #212121; text-transform: capitalize; margin: 0; padding: 0; float: left;
     }
     a{
-        font-size: 17px; color: #001f46; font-weight: 600; text-decoration: none; text-transform: capitalize; float: right; margin-top: 6px;
+        font-size: 14px; color: #001f46; font-weight: 600; text-decoration: none; text-transform: capitalize; float: right; margin-top: 6px;
     }
     .quiz_back{
         padding: 0 15px;  width: 100%;; float: left; margin-top: 10px; margin-bottom: 20px;
@@ -19,7 +19,7 @@
             ion-icon{ color:$custom_primary; width: 40px; height: 40px;  } 
             }
             ion-label{
-                padding: 0 0 0 82px; font-weight: 700;
+                padding: 8px 0 8px 82px; font-weight: 700;
             }
         }
  }

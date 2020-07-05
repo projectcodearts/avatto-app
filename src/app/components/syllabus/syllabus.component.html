@@ -12,7 +12,7 @@
     </div>
     <p>Fetching</p>
   </div>
-  <ion-slides pager="true" [options]="slideOpts" class="syallabus-details">
+  <ion-slides pager="false" [options]="slideOpts" class="syallabus-details" >
     <ion-slide *ngFor="let data of sylllabus">
       <ion-card  [routerLink]="['/', 'syllabus-details', data.link]">
         <div class="image-box">

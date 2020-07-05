@@ -13,13 +13,11 @@ export class SyllabusComponent implements OnInit {
   sylllabus: any = []; 
   constructor(private _syllabus: SyllabusService) { }
   slideOpts = {
-    initialSlide: 1,
-    freeMode: true,
     speed: 400,
-    slidesPerView: 2,
+    slidesPerView: 3,
     watchSlidesProgress: true,
     grabCursor: true,
-    spaceBetween: 20
+    spaceBetween: 11
   };
   ngOnInit() {
     this.fetching = true;

@@ -1,12 +1,39 @@
+@import "../../../assets/css/mixin.component.scss";
+@import "../../../theme/color_variables.scss";
 .cat-details{
     text-align: center; width: 100%; float: left; position: relative; 
+    ion-col{
+        padding: 0;
+    }
     ion-card{
-        height: 174px; box-shadow: rgba(23,49,67,.15) 2px 0 4px; display: flex; align-items: center; border-radius: 5px; background-color: #f9f4e5;
+        height: 135px; box-shadow: rgba(23,49,67,.15) 2px 0 4px; display: flex; align-items: center; border-radius: 5px; margin: 11px 5.5px 0;
         img{
-            width: 60px;
+            width: 60px; margin-bottom: 12px;
+        }
+        ion-card-header{
+            padding: 0;
         }
     }
     .card-title{
-        font-size: 14px;
+        font-size: 14px; color:$custom_primary; font-weight: 700; 
+    }
+    .card-sub-title{
+        font-size: 13px; color: #9d9d9d; 
+    }
+}
+
+@media only screen and (max-width:500px){
+    .cat-details{
+        ion-card{
+            img{
+                width: 36px;;
+            }
+        }
+        .card-title{
+            font-size: 11px;
+        }
+        .card-sub-title{
+            font-size: 10px; color: #9d9d9d; 
+        }
     }
 }
