@@ -54,8 +54,9 @@ ion-card{
                 color: #ededed;
             }
             .span{
+                background-color: #ededed;
                 &:before{
-                    content: "-";
+                    content: "-"; color: $custom_primary;
                 }
             }
             .completed{
