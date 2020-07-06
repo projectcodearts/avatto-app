@@ -11,6 +11,7 @@ export class ShortitemComponent implements OnInit {
   fetching = false;
   squestion: any = [];
   pageid:any;
+  count:any;
   short_question:boolean = false;
   constructor(private _squestion: ShortQuestionsService,private route: ActivatedRoute) {}
 
@@ -22,6 +23,7 @@ export class ShortitemComponent implements OnInit {
       const data = JSON.stringify(response[1].result);
       this.squestion = JSON.parse(data);
       this.pageid = response[0].link;
+      this.count = response[0].count;
       this.fetching = false;
      
     });

@@ -7,8 +7,11 @@
           <ion-card-header class="card-header">
             <ion-card-title class="card-title">{{sylllabus.title}}</ion-card-title>
           </ion-card-header>
-          <!-- <iframe width="100%" height="1122" [src]="iframe_src"></iframe> -->
-          <p [innerHtml]="sylllabus.iframe_src"></p>
+          
+          <iframe [src]="sylllabus.iframe_src | safe" width="100%" height="1122"></iframe>
+
+
+         
           <p [innerHTML]="sylllabus.content"></p>
          
          

@@ -1,5 +1,10 @@
 @import "../../../assets/css/mixin.component.scss";
 @import "../../../theme/color_variables.scss";
+.cat-name6,.cat-name7,.cat-name8,.cat-name9,
+.cat-name10,.cat-name11,.cat-name12,.cat-name13,.cat-name14,
+.cat-name15{
+    display: none;
+}
 .cat-details{
     text-align: center; width: 100%; float: left; position: relative; 
     ion-col{

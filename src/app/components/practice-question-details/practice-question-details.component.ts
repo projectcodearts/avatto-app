@@ -32,6 +32,7 @@ export class PracticeQuestionDetailsComponent implements OnInit {
     this._practiceqsdts.getPracticeQuestionDetails(id).pipe().subscribe(response=>{
       console.log(response);
       this.practiceQs = response;
+      
       if(this.practiceQs.length == 0){
         console.log('no response');
         this.router.navigate(['/mcq', id]);

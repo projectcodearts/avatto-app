@@ -8,6 +8,8 @@ import { SyllabusDetailsPageRoutingModule } from './syllabus-details-routing.mod
 
 import { SyllabusDetailsPage } from './syllabus-details.page';
 import { SyllabusDetailsComponent } from 'src/app/components/syllabus-details/syllabus-details.component';
+import { SafePipe } from 'src/app/allPipes/safe.pipe';
+
 
 @NgModule({
   imports: [ 
@@ -16,6 +18,7 @@ import { SyllabusDetailsComponent } from 'src/app/components/syllabus-details/sy
     IonicModule,
     SyllabusDetailsPageRoutingModule
   ],
-  declarations: [SyllabusDetailsPage,SyllabusDetailsComponent]
+  
+  declarations: [SyllabusDetailsPage,SyllabusDetailsComponent,SafePipe]
 })
 export class SyllabusDetailsPageModule {}

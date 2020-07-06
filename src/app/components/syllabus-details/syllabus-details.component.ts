@@ -3,7 +3,7 @@ import { LoadingController } from '@ionic/angular';
 import { finalize } from 'rxjs/operators';
 import { ActivatedRoute,Router } from '@angular/router';
 import { SyllabusDetailsService } from '../../allServices/syllabus-details.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer,SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-syllabus-detail',
   templateUrl: './syllabus-details.component.html',
@@ -15,6 +15,8 @@ export class SyllabusDetailsComponent implements OnInit {
   title: string = "Syllabus";
   sylllabus: any = []; 
   iframe_src:any;
+  iframe_src2:any;
+  link:any;
 
   constructor(private sanitizer: DomSanitizer, private _syllabus:SyllabusDetailsService,private route: ActivatedRoute,private router:Router) { }
 
@@ -25,8 +27,10 @@ export class SyllabusDetailsComponent implements OnInit {
       const data = JSON.stringify(response)
       this.sylllabus = JSON.parse(data);
       this.iframe_src = this.sanitizer.bypassSecurityTrustResourceUrl(this.sylllabus.iframe_src);
-      
+      this.iframe_src2 = (this.iframe_src.changingThisBreaksApplicationSecurity);
+      this.link = ('https://avatto.in/wp-content/uploads/2020/06/UGC-NET-Paper-1-updated-Syllabus.pdf');
       this.fetching = false;
+      
     });
   }
 

@@ -21,7 +21,15 @@
   </div>
 </div>
 <ion-button [routerLink]="['/', 'short-question-listing', pageid]">View More</ion-button>-->
-
+<div class="fetching-block" *ngIf="fetching">
+  <div class="lds-ring">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <p>Fetching...</p> 
+</div>
 <ion-card [routerLink]="['/', 'short-question-listing', pageid]">
   <div>
     <img src="assets/images/s-question.png">
@@ -32,7 +40,7 @@
       <ion-progress-bar value="0.4" style="--progress-background: #4caf50;"></ion-progress-bar>
     </div>
     <div class="completed">
-      <span>40%</span> - 20 Chapters
+      <span>40%</span> - {{count}} Chapters
     </div>
     <ion-icon name="chevron-forward-outline"></ion-icon>
   </div>
