@@ -18,6 +18,7 @@ import { MocktestTableComponent } from 'src/app/components/mocktest/mocktest-tab
 import { StudyMaterialTableComponent } from 'src/app/components/study-materials/study-material-table/study-material-table.component';
 import { PapersTableComponent } from 'src/app/components/papers/papers-table/papers-table.component';
 import { ShortQuestionsService } from 'src/app/allServices/short-questions.service';
+import { DrescriptionComponent } from 'src/app/components/allcategories/subcategory/drescription/drescription.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { ShortQuestionsService } from 'src/app/allServices/short-questions.servi
     ShortitemComponent, 
     MocktestTableComponent, 
     StudyMaterialTableComponent,
-    PapersTableComponent
+    PapersTableComponent,
+    DrescriptionComponent
   ],
   providers: [PracticeQuestionService, PracticeQuizService, ShortQuestionsService]
 })

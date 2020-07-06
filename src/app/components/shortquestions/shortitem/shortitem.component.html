@@ -1,4 +1,4 @@
-<div class="fetching-block" *ngIf="fetching">
+<!--<div class="fetching-block" *ngIf="fetching">
   <div class="lds-ring">
     <span></span>
     <span></span>
@@ -20,4 +20,20 @@
     </div>
   </div>
 </div>
-<ion-button [routerLink]="['/', 'short-question-listing', pageid]">View More</ion-button>
+<ion-button [routerLink]="['/', 'short-question-listing', pageid]">View More</ion-button>-->
+
+<ion-card [routerLink]="['/', 'short-question-listing', pageid]">
+  <div>
+    <img src="assets/images/s-question.png">
+    <ion-card-header>
+      <ion-card-title class="card-title">Short Questions</ion-card-title>
+    </ion-card-header>
+    <div class="progress-back">
+      <ion-progress-bar value="0.4" style="--progress-background: #4caf50;"></ion-progress-bar>
+    </div>
+    <div class="completed">
+      <span>40%</span> - 20 Chapters
+    </div>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </div>
+</ion-card>

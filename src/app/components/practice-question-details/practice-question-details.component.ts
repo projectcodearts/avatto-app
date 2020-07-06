@@ -40,4 +40,23 @@ export class PracticeQuestionDetailsComponent implements OnInit {
     })
   }
 
+  
+  toggleAccordian(event, index) {
+    var element = event.target.parentElement;
+    element.classList.toggle("active");
+    if(this.practiceQs[index].isActive) {
+      this.practiceQs[index].isActive = false;
+    } else {
+      this.practiceQs[index].isActive = true;
+    }      
+    var details_back = element.nextElementSibling;
+    if (details_back.style.maxHeight) {
+      details_back.style.maxHeight = null;
+    } else {
+      details_back.style.maxHeight = details_back.scrollHeight + "px";
+    }
+  }
+
+  
+
 }
