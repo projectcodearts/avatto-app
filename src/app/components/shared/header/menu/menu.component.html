@@ -2,74 +2,12 @@
   <div class="logo"><a routerLink="/home"><img src="{{mainlogo}}" alt=""></a></div>
   
   <div class="menu-wrapper">
-    <ion-menu-toggle>
-      <ion-item lines="none" color="custom" [routerLink]="['/home']" routerDirection="forward" expand="block" routerLinkActive="router-link-active" >
-        <ion-icon slot="start" name="home-outline"></ion-icon>
-        <ion-label color="primary">Home</ion-label>
+    <ion-menu-toggle  *ngFor="let item of menu">
+      <ion-item lines="none" color="custom" [routerLink]="[item.menulink]" routerDirection="forward" expand="block" routerLinkActive="router-link-active" >
+        <ion-icon slot="start" [name]="item.menuicon + '-outline'"></ion-icon>
+        <ion-label color="primary">{{item.menuname | titlecase}}</ion-label>
       </ion-item>
     </ion-menu-toggle>
-    
-    <ion-menu-toggle>
-      <ion-item lines="none" color="custom" [routerLink]="['/about-us']" routerDirection="forward"  expand="block" routerLinkActive="router-link-active" >
-        <ion-icon slot="start" name="people-outline"></ion-icon>
-        <ion-label>About Us</ion-label>
-      </ion-item>
-    </ion-menu-toggle>
-  
-    <ion-menu-toggle>
-      <ion-item lines="none" color="custom" [routerLink]="['/products']" routerDirection="forward"  expand="block" routerLinkActive="router-link-active" >
-        <ion-icon slot="start" name="gift-outline"></ion-icon>
-        <ion-label>Products</ion-label>
-      </ion-item>
-    </ion-menu-toggle>
-  
-    <ion-menu-toggle>
-      <ion-item lines="none" color="custom" [routerLink]="['/categories']" routerDirection="forward"  expand="block" routerLinkActive="router-link-active" >
-        <ion-icon slot="start" name="duplicate-outline"></ion-icon>
-        <ion-label>Categories</ion-label>
-      </ion-item>
-    </ion-menu-toggle>
-    
-  
-    <ion-menu-toggle>
-      <ion-item lines="none" color="custom" [routerLink]="['/eligiblity']" routerDirection="forward"  expand="block" routerLinkActive="router-link-active">
-        <ion-icon slot="start" name="finger-print-outline"></ion-icon>
-        <ion-label>Eligiblity</ion-label>
-      </ion-item>
-    </ion-menu-toggle>
-    
-  
-    <ion-menu-toggle>
-      <ion-item lines="none" color="custom" [routerLink]="['/syllabus']" routerDirection="forward"  expand="block" routerLinkActive="router-link-active"> 
-        <ion-icon slot="start" name="laptop-outline"></ion-icon>
-        <ion-label>Syllabus</ion-label>
-      </ion-item>
-    </ion-menu-toggle>
-    
-  
-    <ion-menu-toggle>
-      <ion-item  lines="none" color="custom" [routerLink]="['/papers']" routerDirection="forward"  expand="block" routerLinkActive="router-link-active" >
-        <ion-icon slot="start" name="book-outline"></ion-icon>
-        <ion-label>Papers </ion-label>
-      </ion-item>
-    </ion-menu-toggle>
-    
-  
-    <ion-menu-toggle>
-      <ion-item lines="none" color="custom" [routerLink]="['/mocktest']" routerDirection="forward"  expand="block" routerLinkActive="router-link-active" >
-        <ion-icon slot="start" name="flask-outline"></ion-icon>
-        <ion-label>Mocktest </ion-label>
-      </ion-item>
-    </ion-menu-toggle>
-    
-  
-    <ion-menu-toggle>
-      <ion-item lines="none" color="custom" [routerLink]="['/quiz']" routerDirection="forward"  expand="block" routerLinkActive="router-link-active" >
-        <ion-icon slot="start" name="library-outline"></ion-icon>
-        <ion-label>Quiz</ion-label>
-      </ion-item>
-    </ion-menu-toggle>
-
     <ion-menu-toggle>
       <ion-item lines="none" color="warning" class="logout">
         <ion-icon slot="start"  name="log-out-outline"></ion-icon>
