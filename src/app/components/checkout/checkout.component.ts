@@ -10,6 +10,7 @@ declare var RazorpayCheckout:any;
   styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent implements OnInit {
+  
   todo: { 
     couponCode: string, 
    } = {
@@ -70,6 +71,8 @@ export class CheckoutComponent implements OnInit {
       
     });
   }
+  
+  
 
   async appyCouponCode(){
     let loading = await this.loadingCtrl.create({

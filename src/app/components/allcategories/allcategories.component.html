@@ -9,16 +9,33 @@
     <p>Fetching...</p> 
   </div>
   <ion-row>
-    <ion-col size-lg="4" size-md="4" size-sm="4" size="4" *ngFor="let cat of allcategory">
-      <ion-card [routerLink]="['/', 'categories', cat.link]"  routerDirection="root"  expand="block">
+    <ion-col size-lg="12" size-md="12" size-sm="12" size="12" *ngFor="let cat of allcategory">
+      <!--<ion-card [routerLink]="['/', 'categories', cat.link]"  routerDirection="forward"  expand="block">
         <div>
-          <img src="{{cat.icon}}">
+          <div class="image-back">
+            <img src="{{cat.icon}}">
+          </div>
+          
           <ion-card-header>
             <ion-card-title class="card-title">{{cat.name}}</ion-card-title>
-            <ion-card-subtitle class="card-sub-title">34 Questions</ion-card-subtitle>
+            <ion-card-subtitle class="card-subtitle">34 Questions</ion-card-subtitle>
+            <ion-card-subtitle class="card-subtitle-com">15 Questions Completed</ion-card-subtitle>
           </ion-card-header>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
         </div>
-      </ion-card>
+      </ion-card>-->
+      <div class="new-category-section">
+        <div class="section" [routerLink]="['/', 'categories', cat.link]"  routerDirection="forward"  expand="block">
+          <div>
+            <div class="image-back">
+              <img src="{{cat.icon}}">
+            </div>
+            <div class="card-title">{{cat.name}}</div>
+            <div class="card-subtitle">34 Questions</div>
+            <ion-icon></ion-icon>
+          </div>
+        </div>
+      </div>
     </ion-col>
   </ion-row>
 </ion-grid>

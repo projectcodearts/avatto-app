@@ -49,7 +49,7 @@
     </div>
     <p [innerHTML]="product.short_description"></p>
   </div>
-  <button class="add-to-cart">
+  <button class="add-to-cart" (click)="addToCart(data)">
     <ion-icon slot="start" name="cart-outline"></ion-icon>
     <ion-lable>Add to Cart</ion-lable>
   </button>
