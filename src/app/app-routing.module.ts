@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./allPages/sign-up/sign-up.module').then( m => m.SignUpPageModule)
   },
   {
+    path: 'about-us',
+    loadChildren: () => import('./allPages/aboutus-page/aboutus-page.module').then( m => m.AboutusPagePageModule)
+  },
+  {
     path: 'products',
     loadChildren: () => import('./allPages/product-page/product-page.module').then( m => m.ProductPagePageModule)
   },
@@ -55,6 +59,10 @@ const routes: Routes = [
   {
     path: 'syllabus',
     loadChildren: () => import('./allPages/syllabus-page/syllabus-page.module').then( m => m.SyllabusPagePageModule)
+  },
+  {
+    path: 'syllabus/:id',
+    loadChildren: () => import('./allPages/syllabus-details/syllabus-details.module').then( m => m.SyllabusDetailsPageModule)
   },
   {
     path: 'explain',
@@ -107,14 +115,8 @@ const routes: Routes = [
     path: 'short-question-listing/:id',
     loadChildren: () => import('./allPages/short-question-listing/short-question-listing.module').then( m => m.ShortQuestionListingPageModule)
   },
-  {
-    path: 'syllabus-details/:id',
-    loadChildren: () => import('./allPages/syllabus-details/syllabus-details.module').then( m => m.SyllabusDetailsPageModule)
-  },
-  {
-    path: '**',
-    loadChildren: () => import('./allPages/pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
-  },
+  
+  
   {
     path: 'quiz-explain',
     loadChildren: () => import('./allPages/quiz-explain/quiz-explain.module').then( m => m.QuizExplainPageModule)
@@ -127,6 +129,14 @@ const routes: Routes = [
     path: 'user-address',
     loadChildren: () => import('./allPages/user-address/user-address.module').then( m => m.UserAddressPageModule)
   },
+  {
+    path: '**',
+    loadChildren: () => import('./allPages/pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
+  },
+  
+
+  
+
 
 
 

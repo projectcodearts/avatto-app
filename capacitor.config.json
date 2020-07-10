@@ -1,0 +1,30 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "avatto",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {
+    "preferences": {
+      "ScrollEnabled": "true",
+      "android-minSdkVersion": "19",
+      "BackupWebStorage": "none",
+      "SplashMaintainAspectRatio": "true",
+      "FadeSplashScreenDuration": "0",
+      "SplashShowOnlyFirstTime": "false",
+      "SplashScreen": "none",
+      "SplashScreenDelay": "0",
+      "LottieRemoteEnabled": "true",
+      "LottieAnimationLocation": "https://assets.lottiefiles.com/datafiles/99nA1a7mkSF3Oz8/data.json",
+      "LottieImagesLocation": "www/lottie/images",
+      "LottieCancelOnTap": "true",
+      "LottieFullScreen": "true",
+      "LottieBackgroundColor": "#fff000a3"
+    }
+  }
+}

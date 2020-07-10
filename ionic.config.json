@@ -1,7 +1,8 @@
 {
   "name": "avatto",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
