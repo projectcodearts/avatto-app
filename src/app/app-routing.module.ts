@@ -104,9 +104,10 @@ const routes: Routes = [
     loadChildren: () => import('./allPages/checkout-page/checkout-page.module').then( m => m.CheckoutPagePageModule)
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./allPages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    path: 'profile',
+    loadChildren: () => import('./allPages/profile-page/profile-page.module').then( m => m.ProfilePagePageModule)
   },
+  
   {
     path: 'practice-quiz/:id',
     loadChildren: () => import('./allPages/practice-quiz/practice-quiz.module').then( m => m.PracticeQuizPageModule)
@@ -133,6 +134,8 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./allPages/pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
   },
+  
+
   
 
   

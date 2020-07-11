@@ -11,12 +11,13 @@
    
 </div>
 <div class="drescription-back" *ngIf="pdfblock">
-  <div class="details" [innerHTML]="sylllabus.content"></div>
   <div class="cover">
     <div class="pdf-viewer">
       <iframe [src]="sylllabus.iframe_src | safe" ></iframe>
     </div>
   </div>
+  <div class="details" [innerHTML]="sylllabus.content"></div>
+  
   
   
 </div>
